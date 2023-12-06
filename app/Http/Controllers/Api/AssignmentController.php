@@ -27,7 +27,6 @@ class AssignmentController extends Controller
      */
     public function store(Request $request)
     {
-        info($request);
         try {
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
