@@ -28,6 +28,7 @@ class AssignmentController extends Controller
     public function store(Request $request)
     {
         try {
+            info($request);
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string|max:255',
@@ -60,6 +61,7 @@ class AssignmentController extends Controller
     public function update(Request $request, Assignment $assignment)
     {
         try {
+            info($request);
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string|max:255',
