@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('assignments', AssignmentController::class);
+Route::put('status_assignment', [AssignmentController::class, 'statusAssignment']);

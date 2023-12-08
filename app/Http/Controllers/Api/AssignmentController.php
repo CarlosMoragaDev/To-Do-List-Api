@@ -28,7 +28,6 @@ class AssignmentController extends Controller
     public function store(Request $request)
     {
         try {
-            info($request);
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string|max:255',
@@ -61,7 +60,6 @@ class AssignmentController extends Controller
     public function update(Request $request, Assignment $assignment)
     {
         try {
-            info($request);
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string|max:255',
@@ -90,6 +88,24 @@ class AssignmentController extends Controller
         }catch (\Exception $e) {
             info($e->getMessage());
             return response()->json(['error' => $e->getMessage(), 'code'=>404], 404);
+        }
+    }
+
+    public function statusAssignment(Request $request)
+    {
+        try {
+            $assignment = Assignment::findOrFail($request->id);
+            info($assignment);
+            $validated = $request->validate([
+                'status' => 'nullable|string|max:255',
+            ]);
+            $assignment->update([
+                'status' => $validated['status'],
+            ]);
+            return response()->json([$assignment, 'message' => 'Tarea Terminada','code'=>201], 201);
+        } catch (\Exception $e) {
+            info($e->getMessage());
+            return response()->json(['error' => $e->getMessage(), 'code'=>405], 405);
         }
     }
 }
