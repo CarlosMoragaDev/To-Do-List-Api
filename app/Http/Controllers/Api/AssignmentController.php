@@ -13,8 +13,8 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignments = Assignment::all();
         try{
+            $assignments = Assignment::all();
             return response()->json($assignments);
         }catch(\Exception $e) {
             info($e->getMessage());
@@ -63,12 +63,10 @@ class AssignmentController extends Controller
             $validated = $request->validate([
                 'name' => 'required|string|max:255',
                 'description' => 'nullable|string|max:255',
-                'status' => 'nullable|string|max:255',
             ]);
             $assignment->update([
                 'name' => $validated['name'],
                 'description' => $validated['description'],
-                'status' => $validated['status'],
             ]);
             return response()->json([$assignment, 'message' => 'Nueva Tarea Creada','code'=>201], 201);
         } catch (\Exception $e) {
@@ -95,7 +93,6 @@ class AssignmentController extends Controller
     {
         try {
             $assignment = Assignment::findOrFail($request->id);
-            info($assignment);
             $validated = $request->validate([
                 'status' => 'nullable|string|max:255',
             ]);
