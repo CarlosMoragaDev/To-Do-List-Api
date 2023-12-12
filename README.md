@@ -10,7 +10,7 @@
 > [!NOTE] 
 -Run: 'yarn install o npm install' for dependencies.
 
-> > [!NOTE]
+> [!NOTE]
 -It's an option run: 'php artisan migrate:fresh --seed' for seeders.
 
 > [!IMPORTANT] 
