@@ -8,11 +8,13 @@
 </p>
 
 > [!NOTE] 
--Ejecuta: 'yarn install o npm install' para descargar dependencias.
--Ejecuta: 'php artisan migrate:fresh --seed' para ejecutar seeder si lo deseas.
+-Run: 'yarn install o npm install' for dependencies.
+
+> > [!NOTE]
+-It's an option run: 'php artisan migrate:fresh --seed' for seeders.
 
 > [!IMPORTANT] 
--Debes ejecutar este proyecto para que 'To-Do-List' pueda ejecutar sus funciones.
+-This project must be running for on `http://localhost:8000` for 'To-Do-List' can work on `http://localhost:3000`.
 
 ## About Laravel
 
