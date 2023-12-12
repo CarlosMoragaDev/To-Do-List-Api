@@ -7,6 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+[!NOTE]
+-Ejecuta: 'yarn install o npm install' para descargar dependencias.
+-Ejecuta: 'php artisan migrate:fresh --seed' para ejecutar seeder si lo deseas.
+
+[!TIP]
+-Debes ejecutar este proyecto para que 'To-Do-List' pueda ejecutar sus funciones.
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
