@@ -19,7 +19,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('assignments', AssignmentController::class);
-Route::post('create_assignment', [AssignmentController::class, 'store']);
+Route::apiResource('assignments', AssignmentController::class)->only(['index','store', 'update', 'destroy', 'show']);
 Route::put('status_assignment', [AssignmentController::class, 'statusAssignment']);
-Route::delete('delete_assignment/{assignment}', [AssignmentController::class, 'destroy']);
